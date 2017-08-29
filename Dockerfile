@@ -2,7 +2,7 @@ from ubuntu:16.04
 
 # Opencv
 RUN \ 
-    apt-get update && apt-get upgrade -y && \
+    apt-get update && \
     apt-get install --assume-yes wget unzip && \
 
 
@@ -34,9 +34,6 @@ RUN \
 
 # Realsense
 RUN \
-    # upgrade/dist-upgrade not recommended maybe get rid of
- 
-    #apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y && \
     apt-get update && \
 
     DEBIAN_FRONTEND=noninteractive apt-get install -y --install-recommends linux-generic-lts-xenial xserver-xorg-core-lts-xenial xserver-xorg-lts-xenial xserver-xorg-video-all-lts-xenial xserver-xorg-input-all-lts-xenial libwayland-egl1-mesa-lts-xenial && \
